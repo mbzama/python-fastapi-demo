@@ -1,3 +1,4 @@
+import os
 from typing import Optional
 
 from fastapi import FastAPI
@@ -7,7 +8,11 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {
+            "Message": "API is up and running",
+            "DATABASE": [os.getenv("DATABASE_URL"), os.getenv("DATABASE_USER"), os.getenv("POSTGRES_PASSWORD")],
+            "AUTHENTICATION": os.getenv("AUTHENTICATION")
+           }
 
 
 @app.get("/items/{item_id}")

@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: python-poetry-fastapi
+    ports:
+    - 8001:80
+    restart: always
+    depends_on:
+      - postgresdb
+    environment:
+      - AUTHENTICATION=jwt
+      - DATABASE_URL=localhost
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=dbuser@123
+
+  postgresdb:
+    container_name: postgresdb
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=dbuser@123
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    volumes: 
+      - ./volume/postgresdb:/var/lib/postgresql
