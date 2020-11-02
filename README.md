@@ -2,25 +2,22 @@
 
 ### Install poetry (package manager)
 ### Download [poetry](https://link):
-
-  `
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-   `
+`curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python`
 
 
-### To get started you need Poetry's bin directory ($HOME/.poetry/bin) in your `PATH` environment variable. Next time you log in this will be done automatically. Add entry in PATH variable in `~/.bash_rc` file.
+### Setup path
+To get started you need Poetry's bin directory ($HOME/.poetry/bin) in your `PATH` environment variable. Next time you log in this will be done automatically. Add entry in PATH variable in `~/.bash_rc` file.
 
 
 ### Apply changes to current terminal
 
-    `source $HOME/.poetry/env`
+`source $HOME/.poetry/env`
 
-    `source ~/.bashrc`
+`source ~/.bashrc`
 
 
 ### Install project dependencies:
-
-    `poetry install`
+`poetry install`
 
 ### Run app using this command:    
 `AUTHENTICATION=jwt DATABASE_URL=localhost POSTGRES_USER=postgres POSTGRES_PASSWORD=dbuser@123 uvicorn main:app --reload`
@@ -29,7 +26,7 @@
   [ http://localhost:8000/](http://localhost:8000/)
 
 
-  
+
 
 # Build/Run using Docker
 
