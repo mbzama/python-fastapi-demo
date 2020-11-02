@@ -36,11 +36,8 @@ To get started you need Poetry's bin directory ($HOME/.poetry/bin) in your `PATH
 ### Run app with docker container
    `docker run -d --name python-fastapi-c -p 8001:80 python-fastapi`
 
-### Verify the container:
-`docker ps`
-
-### Accessing logs
-`docker logs -f python-fastapi`
+### Access app using url:   
+  [ http://localhost:8001/](http://localhost:8001/)
 
 
 
@@ -59,7 +56,7 @@ To get started you need Poetry's bin directory ($HOME/.poetry/bin) in your `PATH
 
 
 ### Access app using url:   
-  [ http://localhost:8001/](http://localhost:8001/)
+  [ http://localhost:8002/](http://localhost:8002/)
 
 
 # Verify

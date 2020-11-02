@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: python-poetry-fastapi
     ports:
-      - 8001:80
+      - 8002:80
     restart: always
     environment:
       - DATABASE_URL: 'localhost'
