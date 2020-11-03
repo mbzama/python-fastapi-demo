@@ -1,3 +1,4 @@
+-----------------------------------
 # Local setup
 
 ### Install poetry (package manager)
@@ -26,39 +27,42 @@ To get started you need Poetry's bin directory ($HOME/.poetry/bin) in your `PATH
   [ http://localhost:8000/](http://localhost:8000/)
 
 
+-----------------------------------
+# Build Docker Image
 
-
-# Build/Run using Docker
-
-### Build docker image with Dockerfile
+### Using Dockerfile
    `docker build -t python-fastapi .`
 
-### Run app with docker container
-   `docker run -d --name python-fastapi-c -p 8001:80 python-fastapi`
+### Using Docker Compose
+   `docker-compose build`
+
 
 ### Access app using url:   
   [ http://localhost:8001/](http://localhost:8001/)
 
 
+-----------------------------------
+# Create/Run app as docker container
+### Run with docker command:
+   `docker run -d --name python-fastapi-c -p 8001:80 -e AUTHENTICATION=jwt -e DATABASE_URL=localhost -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=dbuser@123 python-fastapi`
+#### Access app using url:   
+  [ http://localhost:8001/](http://localhost:8001/)
 
-# Build/Run using Docker Compose
-### Build image using docker-compose file:    
-`docker-compose -f docker-compose-qa.yml build`
 
-### Run with local environment:  
-`docker-compose -d -f docker-compose-local.yml up --build`
+### Run with docker-compose - local:  
+`docker-compose -d up`
 
-### Run with qa environment:  
+### Run with docker-compose - qa:  
 `docker-compose -d -f docker-compose-qa.yml up --build`
 
-### Run with prod environment:  
+### Run with docker-compose - prod:  
 `docker-compose -d -f docker-compose-prod.yml up --build`
 
-
-### Access app using url:   
+#### Access app using url:   
   [ http://localhost:8002/](http://localhost:8002/)
 
 
+-----------------------------------
 # Verify
 ### To check the docker container status:    
 `docker ps`

@@ -10,7 +10,7 @@ app = FastAPI()
 def read_root():
     return {
             "Message": "API is up and running",
-            "DATABASE": [os.getenv("DATABASE_URL"), os.getenv("DATABASE_USER"), os.getenv("POSTGRES_PASSWORD")],
+            "DATABASE": [os.getenv("DATABASE_URL"), os.getenv("POSTGRES_USER"), os.getenv("POSTGRES_PASSWORD")],
             "AUTHENTICATION": os.getenv("AUTHENTICATION")
            }
 
