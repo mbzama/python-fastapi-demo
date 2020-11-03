@@ -18,7 +18,9 @@ To get started you need Poetry's bin directory ($HOME/.poetry/bin) in your `PATH
 
 
 ### Install project dependencies:
-`poetry install`
+`poetry install`     
+`sudo apt install uvicorn`
+
 
 ### Run app using this command:    
 `AUTHENTICATION=jwt DATABASE_URL=localhost POSTGRES_USER=postgres POSTGRES_PASSWORD=dbuser@123 uvicorn main:app --reload`

@@ -8,6 +8,7 @@ authors = ["zama <zamamb@gmail.com>"]
 python = "^3.8"
 fastapi = "^0.61.1"
 requests = "^2.24.0"
+uvicorn = "^0.12.2"
 
 [tool.poetry.dev-dependencies]
 
